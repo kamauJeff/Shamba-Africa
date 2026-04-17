@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Shamba",
+    "slug": "shamba-africa",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": { "backgroundColor": "#13522e" },
+    "ios": { "bundleIdentifier": "com.shamba.africa", "supportsTablet": false },
+    "android": { "package": "com.shamba.africa", "adaptiveIcon": { "backgroundColor": "#13522e" } },
+    "plugins": ["expo-router", "expo-font"],
+    "scheme": "shamba",
+    "extra": { "router": { "origin": false }, "eas": { "projectId": "your-project-id" } }
+  }
+}
