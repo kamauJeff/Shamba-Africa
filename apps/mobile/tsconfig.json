@@ -1,5 +1,25 @@
 {
   "extends": "expo/tsconfig.base",
-  "compilerOptions": { "strict":true, "baseUrl":".", "paths":{"@/*":["./src/*"],"@shamba/shared":["../../packages/shared/src"],"@shamba/shared/*":["../../packages/shared/src/*"]} },
-  "include": ["**/*.ts","**/*.tsx","../../packages/shared/src"]
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@shamba/shared": [
+        "../../packages/shared/src"
+      ],
+      "@shamba/shared/*": [
+        "../../packages/shared/src/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "../../packages/shared/src",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
 }
