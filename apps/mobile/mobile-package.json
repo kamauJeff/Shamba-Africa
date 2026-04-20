@@ -4,17 +4,16 @@
   "private": true,
   "main": "expo-router/entry",
   "scripts": {
-    "dev": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "dev": "expo start --clear",
+    "android": "expo start --android --clear",
+    "ios": "expo start --ios --clear",
     "build:android": "eas build --platform android",
     "build:ios": "eas build --platform ios"
   },
   "dependencies": {
-    "@babel/runtime": "^7.29.2",
+    "@shamba/shared": "workspace:*",
     "@expo/vector-icons": "^14.0.2",
     "@react-native-async-storage/async-storage": "1.23.1",
-    "@shamba/shared": "workspace:*",
     "@tanstack/react-query": "^5.51.1",
     "axios": "^1.7.3",
     "expo": "~51.0.0",
@@ -37,7 +36,8 @@
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@types/react": "~18.2.0",
-    "babel-plugin-module-resolver": "^5.0.3",
+    "@types/react-native": "~0.73.0",
+    "babel-preset-expo": "~11.0.0",
     "typescript": "^5.5.3"
   }
 }

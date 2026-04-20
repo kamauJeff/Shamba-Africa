@@ -5,11 +5,43 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "splash": { "backgroundColor": "#13522e" },
-    "ios": { "bundleIdentifier": "com.shamba.africa", "supportsTablet": false },
-    "android": { "package": "com.shamba.africa", "adaptiveIcon": { "backgroundColor": "#13522e" } },
-    "plugins": ["expo-router", "expo-font"],
+    "newArchEnabled": false,
+    "splash": {
+      "backgroundColor": "#13522e",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "bundleIdentifier": "com.shamba.africa",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "com.shamba.africa",
+      "adaptiveIcon": {
+        "backgroundColor": "#13522e"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#13522e",
+          "resizeMode": "contain"
+        }
+      ]
+    ],
     "scheme": "shamba",
-    "extra": { "router": { "origin": false }, "eas": { "projectId": "your-project-id" } }
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }

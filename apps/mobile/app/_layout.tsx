@@ -2,16 +2,31 @@ import { useEffect } from 'react'
 import { Stack, router } from 'expo-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { StatusBar } from 'expo-status-bar'
+import * as SplashScreen from 'expo-splash-screen'
 import { useAuthStore } from '@/store/auth.store'
 
-const qc = new QueryClient({ defaultOptions: { queries: { retry:1, staleTime:5*60*1000, refetchOnWindowFocus:false } } })
+SplashScreen.preventAutoHideAsync()
+
+const qc = new QueryClient({
+  defaultOptions: {
+    queries: { retry: 1, staleTime: 5 * 60 * 1000, refetchOnWindowFocus: false },
+  },
+})
 
 function Nav() {
   const { isAuthenticated, isLoading, load } = useAuthStore()
-  useEffect(() => { load() }, [])
+
   useEffect(() => {
-    if (!isLoading) router.replace(isAuthenticated ? '/(tabs)/dashboard' : '/(auth)/login')
+    load()
+  }, [])
+
+  useEffect(() => {
+    if (!isLoading) {
+      SplashScreen.hideAsync()
+      router.replace(isAuthenticated ? '/(tabs)/dashboard' : '/(auth)/login')
+    }
   }, [isAuthenticated, isLoading])
+
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(auth)" />
